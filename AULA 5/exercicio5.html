@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Conversor de Dolar </h1>
+    <input placeholder="Valor em Reais" type="number" id="valorEmReais">
+    <button onclick="converter()">Converter</button>
+</body>
+<script>
+
+    const valorReal = document.querySelector("input");
+
+    function converter() {
+     console.log(valorReal.value);
+        const valorConvertido = valorReal.value / 5.18;
+
+        alert(`O valor em dolar é: ${valorConvertido} dolares`);
+
+
+
+    }
+   
+</script>
+</html>
