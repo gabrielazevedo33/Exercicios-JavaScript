@@ -1,5 +1,5 @@
 
-const notaDoAluno = 4;
+const notaDoAluno = 10;
 
 if(notaDoAluno == 10) {
     console.log("Aluno nota 10! ")

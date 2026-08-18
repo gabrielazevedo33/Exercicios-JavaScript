@@ -7,32 +7,7 @@
                       - Item po item do array
                       - posição atual do array
                       - array completo que está sendo percorrido
-
-REDUCE (Reduzir o array a um único valor)
-    - reduzir um array inteiro a um único valor, seja ele um número, string ou objeto
-        -Você tem acesso a 4 dados:
-            -Acumulador (valor que está sendo acumulado a cada iteração)
-            -Item atual do array
-            -posição atual do array
-            -array completo que está sendo percorrido
-
-FILTER (Filtrar itens do array)
-    - Criar um novo array filtrando os valores desejados do array original
-    - Você tem acesso a 3 dados:
-        -Item por item do array
-        -posição atual do array
-        -array completo que está sendo percorrido
-
-
 */
-
-
-//const numeros = [1, 2, 3, 4, 5];
-
-//const dobro = numeros.map( (numero, index, arrayCompleto) => {
-//    return numero * 2
-//} );
-//console.log(dobro)
 
 
 const produtos = [
@@ -45,16 +20,28 @@ const produtos = [
     { id: 7, nome: "Console de Videogame PlayStation 5", preco: 5000.00, temDesconto: true, quantidade: 1 , },
     { id: 8, nome: "Monitor Gamer LG", preco: 2500.00, temDesconto: false, quantidade: 2 , },
     { id: 9, nome: "Teclado Mecânico Razer", preco: 800.00, temDesconto: true, quantidade: 1 , },
-    { id: 10, nome: "TV Samsung 80 ", preco: 7000.00, temDesconto: true, quantidade: 1 , }
+    { id: 10,nome: "Xbox seris X ", preco: 3000.00, temDesconto: true, quantidade: 5 , },
+    { id: 11,nome: "Xbox seris S ", preco: 2000.00, temDesconto: true, quantidade: 4 , },
+    { id: 12,nome: "JBL BomBox ", preco: 3000.00, temDesconto: true, quantidade: 10 , },
+    { id: 13,nome: "Iphone 17 ", preco: 8000.00, temDesconto: false, quantidade: 5 , },
+    { id: 14,nome: " Arma de arsoft", preco: 3000.00, temDesconto: true, quantidade: 5 , }
+   
 ];
 
 
-// adicionar + 10 em cada produto
-// filtrar so os em promocao
-// Saber qual e o faturamento se vendermos todos em promocao 
+const novosProdutos = produtos.map( produto => {
+    
+    const novoPreco = produto.temDesconto ? produto.preco * 0.9 : produto.preco
 
-const faturamentoTotal = produtos.map(produto => {
-    return {...produto, quantidade: produto.quantidade + 10}
-}).filter(produto => produto.temDesconto).reduce((acumulaldor, produto) => acumulaldor + (produto.quantidade + produto.preco), 0)
 
-console.log(faturamentoTotal.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}))
+    
+    return {
+        id: produto.id,
+        nome: produto.nome,
+        preco: novoPreco,
+        quantidade: produto.quantidade
+    }
+})
+
+
+console.log(produtos)
